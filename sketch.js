@@ -94,6 +94,7 @@ function draw() {
       gameState="start";
       chance=3;
       arr2=[];
+      score=0;
     }
   }
 }
