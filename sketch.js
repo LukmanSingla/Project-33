@@ -67,24 +67,33 @@ function draw() {
   if(gameState=="play"){
     console.log("test");
     if(arr2[arr2.length-1].body.position.y>600){
+      gameState="start";
       if(arr2[arr2.length-1].body.position.x<280){
-    if(chance==0){ gameState="End";    }
+    if(chance==0){ gameState="End";}
 
         score+=500;
       }else if(arr2[arr2.length-1].body.position.x<490){
-    if(chance==0){ gameState="End";    }
+    if(chance==0){ gameState="End";}
 
         score+=100;
       }else if(arr2[arr2.length-1].body.position.x<700){
-    if(chance==0){ gameState="End";    }
+    if(chance==0){ gameState="End";}
 
         score+=200;
       }else{
         score+=0;
       }
-      gameState="start";
+      
       // arr2=[];
     }
   }
 
+  if(gameState=="End"){
+    text("Game Over", 300,320);
+    if(keyCode>0){
+      gameState="start";
+      chance=3;
+      arr2=[];
+    }
+  }
 }
